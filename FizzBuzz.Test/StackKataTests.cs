@@ -18,7 +18,7 @@ namespace FizzBuzz.Test
         [TestMethod]
         public void Can_pop_items_off()
         {
-            var stack = new MyStack();
+            var stack = new MyStack<string>();
             stack.Push("Foo");
             var result = stack.Pop();
             Assert.AreEqual("Foo", result);
@@ -28,7 +28,7 @@ namespace FizzBuzz.Test
         [TestMethod]
         public void Pushing_items_and_Popping_results_in_LIFO_action()
         {
-            var stack = new MyStack();
+            var stack = new MyStack<string>();
             stack.Push("1");
             stack.Push("2");
             stack.Push("3");
@@ -45,7 +45,7 @@ namespace FizzBuzz.Test
         [TestMethod]
         public void Popping_from_empty_stack_doesnt_throw_exception()
         {
-            var stack = new MyStack();
+            var stack = new MyStack<string>();
            var result= stack.Pop();
             Assert.IsNull(result);
 
@@ -54,7 +54,7 @@ namespace FizzBuzz.Test
         [TestMethod]
         public void Pushing_invalid_value_throws_error()
         {
-            var stack = new MyStack();
+            var stack = new MyStack<string>();
             Assert.ThrowsException<ArgumentException>(() => stack.Push(null));
         }
     }
