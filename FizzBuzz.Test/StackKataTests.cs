@@ -58,46 +58,4 @@ namespace FizzBuzz.Test
             Assert.ThrowsException<ArgumentException>(() => stack.Push(null));
         }
     }
-
-    public class MyStack
-    {
-        string[] _array;
-        int _index = -1;
-
-
-
-        public MyStack()
-        {
-            _array = new string[2];
-        }
-
-        int StackCapacity => _array.Length;
-
-        public void Push(string value)
-        {
-            if (value == null || value.GetType() != typeof(string))
-                throw new ArgumentException("value must be of type string and not null.");
-            CheckResize();
-            _array[++_index] = value;
-        }
-
-        public string Pop()
-        {
-            if (_index == -1)
-                return null;
-            else
-            {
-                var result = _array[_index--];
-                return result;
-            }
-        }
- 
-        private void CheckResize()
-        {
-            if (_index % StackCapacity == 0)
-            {
-                Array.Resize(ref _array, StackCapacity * 2);
-            }
-        }
-    }
 }
