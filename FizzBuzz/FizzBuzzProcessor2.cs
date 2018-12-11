@@ -8,12 +8,13 @@ namespace FizzBuzz
         public IEnumerable<string> Run()
         {
             var result= Enumerable.Range(1, 100)
-                              .Select(i =>  {
-                                  if (i % 3 == 0 && i % 5 == 0)
+                              .Select(i =>
+                              {
+                                  if (DivisibleBy3(i) && DivisibleBy5(i))
                                       return "FizzBuzz";
-                                  if (i % 3 == 0)
+                                  if (DivisibleBy3(i))
                                       return "Fizz";
-                                  else if (i % 5 == 0)
+                                  else if (DivisibleBy5(i))
                                       return "Buzz";
                                   else
                                       return i.ToString();
@@ -22,6 +23,16 @@ namespace FizzBuzz
 
                              ;
             return result;
+        }
+
+        private static bool DivisibleBy5(int i)
+        {
+            return i % 5 == 0;
+        }
+
+        private static bool DivisibleBy3(int i)
+        {
+            return i % 3 == 0;
         }
     }
 }
