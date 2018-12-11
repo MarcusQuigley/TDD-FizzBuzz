@@ -14,7 +14,7 @@ namespace FizzBuzz.Test
         [TestMethod]
         public void Return_1_to_100()
         {
-            FizzBuzzProcessor2 processor = new FizzBuzzProcessor2();
+            FizzBuzzProcessor processor = new FizzBuzzProcessor();
             var result = processor.Run();
 
             Assert.AreEqual(100, result.Count());
@@ -24,7 +24,7 @@ namespace FizzBuzz.Test
         [TestMethod]
         public void returns_33_Fizz()
         {
-            FizzBuzzProcessor2 processor = new FizzBuzzProcessor2();
+            FizzBuzzProcessor processor = new FizzBuzzProcessor();
             var result = processor.Run().Count(i => i.Equals("Fizz", StringComparison.InvariantCultureIgnoreCase));
 
             Assert.AreEqual(27, result);
@@ -33,7 +33,7 @@ namespace FizzBuzz.Test
         [TestMethod]
         public void returns_20_Buzz()
         {
-            FizzBuzzProcessor2 processor = new FizzBuzzProcessor2();
+            FizzBuzzProcessor processor = new FizzBuzzProcessor();
             var result = processor.Run().Count(i => i.Equals("Buzz", StringComparison.InvariantCultureIgnoreCase));
 
             Assert.AreEqual(14, result);
@@ -42,7 +42,7 @@ namespace FizzBuzz.Test
         [TestMethod]
         public void Rreturns_6_FizzBuzz()
         {
-            FizzBuzzProcessor2 processor = new FizzBuzzProcessor2();
+            FizzBuzzProcessor processor = new FizzBuzzProcessor();
             var result = processor.Run().Count(i => i.Equals("FizzBuzz", StringComparison.InvariantCultureIgnoreCase));
 
             Assert.AreEqual(6, result);

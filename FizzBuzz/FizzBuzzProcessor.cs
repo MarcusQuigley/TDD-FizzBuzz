@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace FizzBuzz
 {
-    public class FizzBuzzProcessor 
+    public class FizzBuzzProcessor
     {
         public IEnumerable<string> Run()
         {
